@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "civicqa"
+version = "0.1.0"
+description = "Open-source data-quality auditing for civic and eGovernment AI: operationalises ISO/IEC 5259 and adds a representativeness / demographic-parity dimension."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "Apache-2.0" }
+authors = [{ name = "Chukwuka Desmond Ugboaja", email = "udesmond33@gmail.com" }]
+keywords = ["data-quality", "ISO-IEC-5259", "EU-AI-Act", "civic-tech", "eGovernment", "fairness", "representativeness"]
+dependencies = ["pandas>=2.0", "numpy>=1.24"]
+
+[project.urls]
+Homepage   = "https://github.com/udesmond33-maker/Civic-Auditor"
+Repository = "https://github.com/udesmond33-maker/Civic-Auditor"
+Issues     = "https://github.com/udesmond33-maker/Civic-Auditor/issues"
+
+[project.scripts]
+civicqa = "civicqa.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["civicqa*"]

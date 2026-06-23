@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+title: "CivicQA Auditor"
+message: "If you use this software, please cite it as below."
+type: software
+authors:
+  - given-names: "Chukwuka Desmond"
+    family-names: "Ugboaja"
+    affiliation: "Mondosway OÜ"
+version: "0.1.0"
+license: Apache-2.0
+repository-code: "https://github.com/<your-username>/civicqa"
+abstract: >-
+  Open-source data-quality auditing for civic and eGovernment AI.
+  Operationalises the data-quality dimensions of ISO/IEC 5259 and adds a
+  representativeness / demographic-parity dimension, producing EU AI
+  Act-aligned audit reports. Developed under the StandICT.eu 2029 fellowship
+  (Application ID 2029-02-1734).
+keywords:
+  - "data quality"
+  - "ISO/IEC 5259"
+  - "EU AI Act"
+  - "civic technology"
+  - "representativeness"
