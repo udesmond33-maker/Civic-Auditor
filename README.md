@@ -3,7 +3,7 @@
 **Open-source data-quality auditing for civic and eGovernment AI.**
 
 CivicQA operationalises the data-quality dimensions of **ISO/IEC 5259** and
-produces explainable, **EU AI Act-aligned** audit reports — with a novel
+produces explainable, **EU AI Act-aligned** audit reports, with a novel
 **representativeness / demographic-parity** dimension designed for civic
 datasets, where conventional quality checks miss systematic under-representation
 of groups.
@@ -15,8 +15,8 @@ contributing to ISO/IEC JTC 1/SC 42 and CEN/CENELEC JTC 21.
 
 ## Why
 
-The EU AI Act (Article 10) requires high-risk AI — including civic and
-eGovernment systems — to be trained on data that is relevant, representative,
+The EU AI Act (Article 10) requires high-risk AI , including civic and
+eGovernment systems, to be trained on data that is relevant, representative,
 and free of errors. ISO/IEC 5259 defines data-quality dimensions generically,
 but offers no civic-domain implementation. CivicQA fills that gap: a runnable
 tool that scores a dataset against the 5259 dimensions **and** flags
@@ -40,7 +40,7 @@ demographic skew that would otherwise pass every conventional quality check.
 pip install -r requirements.txt
 ```
 
-## Use — command line
+## Use : command line
 
 ```bash
 python -m civicqa.cli audit examples/civic_requests.csv \
@@ -50,7 +50,7 @@ python -m civicqa.cli audit examples/civic_requests.csv \
     --format markdown
 ```
 
-## Use — Python
+## Use : Python
 
 ```python
 from civicqa import CivicQAAuditor
@@ -73,7 +73,7 @@ report.to_json("audit.json")
 
 The bundled sample dataset scores well on conventional dimensions but the
 representativeness check flags severe under-representation of some regions and
-languages — exactly the failure mode civic AI must catch.
+languages  exactly the failure mode civic AI must catch.
 
 ## EU AI Act alignment
 
@@ -82,7 +82,7 @@ producing a traceable, timestamped quality record suitable for compliance logs.
 
 ## Status
 
-`v0.1.0` — core dimensions, ingestion, CLI, audit report (JSON + Markdown).
+`v0.1.0`  core dimensions, ingestion, CLI, audit report (JSON + Markdown).
 Roadmap: extended bias indicators, provenance, JSON-LD output, validation
 against live European open-data platforms.
 
