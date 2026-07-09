@@ -5,7 +5,7 @@ type: software
 authors:
   - given-names: "Chukwuka Desmond"
     family-names: "Ugboaja"
-    affiliation: ""
+    affiliation: "Mondosway OU"
 version: "0.1.0"
 license: Apache-2.0
 repository-code: "https://github.com/<your-username>/civicqa"
