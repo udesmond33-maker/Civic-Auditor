@@ -1,0 +1,16 @@
+{
+ "district": {
+  "Mitte": 0.1011836685989459,
+  "Friedrichshain-Kreuzberg": 0.07664177896825115,
+  "Pankow": 0.10826666434190173,
+  "Charlottenburg-Wilmersdorf": 0.09160545542417607,
+  "Spandau": 0.06536821279881175,
+  "Steglitz-Zehlendorf": 0.08284318025664315,
+  "Tempelhof-Schöneberg": 0.09429137622996865,
+  "Neukölln": 0.08922792921744598,
+  "Treptow-Köpenick": 0.0707030034691668,
+  "Marzahn-Hellersdorf": 0.07138163504713915,
+  "Lichtenberg": 0.0771316142059847,
+  "Reinickendorf": 0.07135548144156495
+ }
+}

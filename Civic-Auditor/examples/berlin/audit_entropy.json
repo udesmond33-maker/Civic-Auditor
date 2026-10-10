@@ -1,0 +1,144 @@
+{
+  "civicqa_audit": {
+    "tool_version": "0.2.0",
+    "iso_basis": "ISO/IEC 5259 (data quality for analytics and ML)",
+    "ai_act_alignment": [
+      "EU AI Act Article 10 \u2014 data governance and quality",
+      "EU AI Act Article 12 \u2014 record-keeping and traceability"
+    ],
+    "dataset": {
+      "name": "berlin_ordnungsamt_q1_2017",
+      "records": 25630,
+      "columns": 4
+    },
+    "timestamp": "2026-10-07T03:17:01.568106+00:00",
+    "result": {
+      "overall_score": 0.854,
+      "grade": "B \u2014 good"
+    },
+    "dimensions": [
+      {
+        "dimension": "completeness",
+        "score": 1.0,
+        "weight": 1.0,
+        "iso_reference": "ISO/IEC 5259-2 \u2014 completeness",
+        "evidence": {
+          "total_cells": 102520,
+          "missing_cells": 0,
+          "missing_fraction_per_column": {
+            "report_id": 0.0,
+            "district": 0.0,
+            "channel": 0.0,
+            "reported_at": 0.0
+          }
+        },
+        "issues": []
+      },
+      {
+        "dimension": "uniqueness",
+        "score": 1.0,
+        "weight": 1.0,
+        "iso_reference": "ISO/IEC 5259-2 \u2014 uniqueness",
+        "evidence": {
+          "rows": 25630,
+          "duplicate_rows": 0
+        },
+        "issues": []
+      },
+      {
+        "dimension": "consistency",
+        "score": 1.0,
+        "weight": 1.0,
+        "iso_reference": "ISO/IEC 5259-2 \u2014 consistency",
+        "evidence": {
+          "columns": 4,
+          "type_inconsistent_columns": []
+        },
+        "issues": []
+      },
+      {
+        "dimension": "accuracy",
+        "score": 1.0,
+        "weight": 1.0,
+        "iso_reference": "ISO/IEC 5259-2 \u2014 accuracy (syntactic)",
+        "evidence": {
+          "mode": "heuristic",
+          "invalid_numeric_values": 0
+        },
+        "issues": []
+      },
+      {
+        "dimension": "currentness",
+        "score": 0.0,
+        "weight": 1.0,
+        "iso_reference": "ISO/IEC 5259-2 \u2014 currentness",
+        "evidence": {
+          "date_column": "reported_at",
+          "max_age_days": 365,
+          "fresh_records": 0,
+          "stale_records": 25630,
+          "median_age_days": 3521.1
+        },
+        "issues": [
+          "25630 record(s) older than 365 days"
+        ]
+      },
+      {
+        "dimension": "accessibility",
+        "score": 1.0,
+        "weight": 1.0,
+        "iso_reference": "ISO/IEC 5259-2 \u2014 accessibility / portability",
+        "evidence": {
+          "checks": {
+            "has_title": true,
+            "has_description": true,
+            "has_column_descriptions": true,
+            "has_named_columns": true
+          }
+        },
+        "issues": []
+      },
+      {
+        "dimension": "representativeness",
+        "score": 0.9369,
+        "weight": 1.5,
+        "iso_reference": "ISO/IEC 5259-1 (PROPOSED extension) \u2014 representativeness & demographic parity",
+        "evidence": {
+          "protected_columns": [
+            "district"
+          ],
+          "per_attribute": {
+            "district": {
+              "mode": "entropy_coverage",
+              "score": 0.9369,
+              "group_shares": {
+                "Neuk\u00f6lln": 0.1746,
+                "Mitte": 0.1706,
+                "Friedrichshain-Kreuzberg": 0.1528,
+                "Pankow": 0.1067,
+                "Tempelhof-Sch\u00f6neberg": 0.0842,
+                "Charlottenburg-Wilmersdorf": 0.0741,
+                "Lichtenberg": 0.0673,
+                "Treptow-K\u00f6penick": 0.0577,
+                "Reinickendorf": 0.0451,
+                "Spandau": 0.0364,
+                "Marzahn-Hellersdorf": 0.0306
+              }
+            }
+          }
+        },
+        "issues": [
+          "'district=Reinickendorf' under-represented (4.5% of records)",
+          "'district=Spandau' under-represented (3.6% of records)",
+          "'district=Marzahn-Hellersdorf' under-represented (3.1% of records)"
+        ]
+      }
+    ],
+    "summary_issues": [
+      "25630 record(s) older than 365 days",
+      "'district=Reinickendorf' under-represented (4.5% of records)",
+      "'district=Spandau' under-represented (3.6% of records)",
+      "'district=Marzahn-Hellersdorf' under-represented (3.1% of records)"
+    ]
+  }
+}

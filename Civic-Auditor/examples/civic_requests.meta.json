@@ -1,0 +1,9 @@
+{
+  "title": "Citizen Service Requests (sample)",
+  "description": "Synthetic civic dataset for CivicQA demo",
+  "columns": {
+    "region": "Reporting region",
+    "language": "Citizen language",
+    "satisfaction": "1-5 rating"
+  }
+}
