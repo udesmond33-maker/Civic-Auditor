@@ -121,6 +121,8 @@ class CivicQAAuditor:
         max_age_days           -> freshness threshold (default 365)
         protected_columns      -> columns for representativeness
         reference_distribution -> per-attribute reference shares (e.g. census)
+        flag_ratio             -> observed/expected ratio below which a stratum is flagged (default 0.5).
+                                  All ratios are always reported in evidence regardless of the threshold.
         metadata               -> {title, description, columns} for accessibility
     """
 

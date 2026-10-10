@@ -1,0 +1,11 @@
+{
+  "reference_distribution": {
+    "stadtbezirk": {
+      "Bonn": 0.4657535491060613,
+      "Bad Godesberg": 0.22723363535054994,
+      "Beuel": 0.20346189253355298,
+      "Hardtberg": 0.10355092300983575
+    }
+  },
+  "source": "Bundesstadt Bonn Statistikstelle, Statistik aktuell Feb 2021, Tabelle 8, Stichtag 31.12.2018"
+}

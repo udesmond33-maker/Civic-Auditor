@@ -1,0 +1,140 @@
+{
+  "civicqa_audit": {
+    "tool_version": "0.2.0",
+    "iso_basis": "ISO/IEC 5259 (data quality for analytics and ML)",
+    "ai_act_alignment": [
+      "EU AI Act Article 10 \u2014 data governance and quality",
+      "EU AI Act Article 12 \u2014 record-keeping and traceability"
+    ],
+    "dataset": {
+      "name": "bonn_maengelmelder",
+      "records": 10361,
+      "columns": 6
+    },
+    "timestamp": "2026-10-10T15:34:43.990677+00:00",
+    "result": {
+      "overall_score": 0.98,
+      "grade": "A \u2014 excellent"
+    },
+    "dimensions": [
+      {
+        "dimension": "completeness",
+        "score": 1.0,
+        "weight": 1.0,
+        "iso_reference": "ISO/IEC 5259-2 \u2014 completeness",
+        "evidence": {
+          "total_cells": 62166,
+          "missing_cells": 0,
+          "missing_fraction_per_column": {
+            "uuid": 0.0,
+            "reported_at": 0.0,
+            "category_raw": 0.0,
+            "lat": 0.0,
+            "lon": 0.0,
+            "stadtbezirk": 0.0
+          }
+        },
+        "issues": []
+      },
+      {
+        "dimension": "uniqueness",
+        "score": 1.0,
+        "weight": 1.0,
+        "iso_reference": "ISO/IEC 5259-2 \u2014 uniqueness",
+        "evidence": {
+          "rows": 10361,
+          "duplicate_rows": 0
+        },
+        "issues": []
+      },
+      {
+        "dimension": "consistency",
+        "score": 1.0,
+        "weight": 1.0,
+        "iso_reference": "ISO/IEC 5259-2 \u2014 consistency",
+        "evidence": {
+          "columns": 6,
+          "type_inconsistent_columns": []
+        },
+        "issues": []
+      },
+      {
+        "dimension": "accuracy",
+        "score": 1.0,
+        "weight": 1.0,
+        "iso_reference": "ISO/IEC 5259-2 \u2014 accuracy (syntactic)",
+        "evidence": {
+          "mode": "heuristic",
+          "invalid_numeric_values": 0
+        },
+        "issues": []
+      },
+      {
+        "dimension": "currentness",
+        "score": 1.0,
+        "weight": 0.0,
+        "iso_reference": "ISO/IEC 5259-2 \u2014 currentness",
+        "evidence": {
+          "note": "no date_column provided; dimension not assessed"
+        },
+        "issues": []
+      },
+      {
+        "dimension": "accessibility",
+        "score": 1.0,
+        "weight": 1.0,
+        "iso_reference": "ISO/IEC 5259-2 \u2014 accessibility / portability",
+        "evidence": {
+          "checks": {
+            "has_title": true,
+            "has_description": true,
+            "has_column_descriptions": true,
+            "has_named_columns": true
+          }
+        },
+        "issues": []
+      },
+      {
+        "dimension": "representativeness",
+        "score": 0.9134,
+        "weight": 1.5,
+        "iso_reference": "ISO/IEC 5259-1 (PROPOSED extension) \u2014 representativeness & demographic parity",
+        "evidence": {
+          "protected_columns": [
+            "stadtbezirk"
+          ],
+          "per_attribute": {
+            "stadtbezirk": {
+              "mode": "reference_parity",
+              "score": 0.9134,
+              "group_shares": {
+                "Bonn": 0.5524,
+                "Bad Godesberg": 0.2014,
+                "Beuel": 0.1712,
+                "Hardtberg": 0.075
+              },
+              "observed_to_expected": {
+                "Bonn": 1.186,
+                "Bad Godesberg": 0.886,
+                "Beuel": 0.842,
+                "Hardtberg": 0.724
+              },
+              "flag_ratio": 0.8,
+              "below_expected": {
+                "Bad Godesberg": 0.886,
+                "Beuel": 0.842,
+                "Hardtberg": 0.724
+              }
+            }
+          }
+        },
+        "issues": [
+          "'stadtbezirk=Hardtberg' under-represented (7.5% of records vs 10.4% expected, ratio 0.72; flag threshold 0.8)"
+        ]
+      }
+    ],
+    "summary_issues": [
+      "'stadtbezirk=Hardtberg' under-represented (7.5% of records vs 10.4% expected, ratio 0.72; flag threshold 0.8)"
+    ]
+  }
+}

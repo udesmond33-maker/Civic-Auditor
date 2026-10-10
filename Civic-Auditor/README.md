@@ -81,6 +81,18 @@ population share, while Friedrichshain-Kreuzberg and Neukölln appear at ~2x. Th
 scores 94% under the reference-free (entropy) mode, showing that the choice of method alone
 changes the result. See `examples/berlin/audit_reference.md`.
 
+### Real data: Bonn citizen reports (v0.2.0)
+
+`examples/bonn/` audits 10,361 Mängelmelder reports (Jan 2018–Feb 2020, after removal of 870
+exact-duplicate rows from the published export) against Bonn's registered population by
+Stadtbezirk on 31.12.2018. Reports carry coordinates only, so each is assigned to a district by
+point-in-polygon against the city's official boundary file. Conventional dimensions again score
+100%; against the population reference, the central district is recorded at 1.19x its share and
+Hardtberg at 0.72x. With the default flag threshold (0.5) this raised no issue, which is why the
+threshold is now configurable and all ratios are always reported. Entropy mode scores 83%,
+reference mode 91% — the method divergence runs the opposite way to Berlin, so method choice
+alone can raise or lower a reported score. See `examples/bonn/build.py`.
+
 ### Synthetic demonstration
 
 The bundled synthetic sample dataset scores well on conventional dimensions but the
