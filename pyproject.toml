@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "civicqa"
-version = "0.1.0"
+version = "0.2.0"
 description = "Open-source data-quality auditing for civic and eGovernment AI: operationalises ISO/IEC 5259 and adds a representativeness / demographic-parity dimension."
 readme = "README.md"
 requires-python = ">=3.9"

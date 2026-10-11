@@ -61,3 +61,13 @@ def test_auditor_end_to_end():
     # report serialises cleanly
     assert "civicqa_audit" in report.as_dict()
     assert isinstance(report.to_markdown(), str)
+
+
+def test_reference_mode_flags_absent_stratum():
+    import pandas as pd
+    from civicqa.dimensions import representativeness
+    df = pd.DataFrame({"district": ["A"] * 50 + ["B"] * 50})
+    ref = {"district": {"A": 0.4, "B": 0.4, "C": 0.2}}
+    r = representativeness(df, protected_columns=["district"], reference_distribution=ref)
+    assert any("ABSENT" in i and "C" in i for i in r.issues)
+    assert r.score < 1.0

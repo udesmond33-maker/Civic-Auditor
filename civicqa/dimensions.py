@@ -253,6 +253,7 @@ def accessibility(df: pd.DataFrame, metadata: Optional[dict] = None, **_) -> Dim
 def representativeness(df: pd.DataFrame,
                        protected_columns: Optional[list[str]] = None,
                        reference_distribution: Optional[dict[str, dict]] = None,
+                       flag_ratio: float = 0.5,
                        **_) -> DimensionResult:
     """
     Measures how evenly a dataset covers groups within protected/ demographic
@@ -304,9 +305,26 @@ def representativeness(df: pd.DataFrame,
         scores.append(attr_score)
 
         # flag severe under-representation
-        for g, s in shares.items():
-            if s < 0.05:
-                issues.append(f"'{col}={g}' under-represented ({s:.1%} of records)")
+        if mode == "reference_parity":
+            ref = reference_distribution[col]
+            ratios = {}
+            for g, expected in ref.items():
+                observed = shares.get(g, 0.0)
+                if expected <= 0:
+                    continue
+                ratio = observed / expected
+                ratios[str(g)] = round(ratio, 3)
+                if observed == 0:
+                    issues.append(f"'{col}={g}' ABSENT (0 records; expected {expected:.1%})")
+                elif ratio < flag_ratio:
+                    issues.append(f"'{col}={g}' under-represented ({observed:.1%} of records vs {expected:.1%} expected, ratio {ratio:.2f}; flag threshold {flag_ratio})")
+            per_attr[col]["observed_to_expected"] = ratios
+            per_attr[col]["flag_ratio"] = flag_ratio
+            per_attr[col]["below_expected"] = {g: r for g, r in ratios.items() if r < 1.0}
+        else:
+            for g, s in shares.items():
+                if s < 0.05:
+                    issues.append(f"'{col}={g}' under-represented ({s:.1%} of records)")
 
     score = float(np.mean(scores)) if scores else 0.0
     return DimensionResult(
