@@ -5,10 +5,10 @@ type: software
 authors:
   - given-names: "Chukwuka Desmond"
     family-names: "Ugboaja"
-    affiliation: "Mondosway OU"
+    affiliation: 
 version: "0.2.0"
 license: Apache-2.0
-repository-code: "https://github.com/<your-username>/civicqa"
+repository-code:"https://github.com/udesmond33-maker/Civic-Auditor"
 abstract: >-
   Open-source data-quality auditing for civic and eGovernment AI.
   Operationalises the data-quality dimensions of ISO/IEC 5259 and adds a
